@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:astrogpt/pages/others/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
-import '../../main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,11 +14,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => OnBoardingPage(),
+            builder: (context) => const OnBoardingPage(),
           ));
     });
   }
@@ -27,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFEFEFE),
+      backgroundColor: const Color(0xffFEFEFE),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -54,8 +53,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   width: 146,
                   height: 24,
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'version 1.1.0', // Add your text here
                   style: TextStyle(
                       fontSize: 16,

@@ -1,33 +1,32 @@
 import 'dart:async';
-import '../Sign_in_Login_pages/sign_in.dart';
 
+import 'package:astrogpt/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
-class LoadingPage extends StatefulWidget {
-  const LoadingPage({super.key});
+class SignInLoading extends StatefulWidget {
+  const SignInLoading({super.key});
 
   @override
-  State<LoadingPage> createState() => _LoadingPageState();
+  State<SignInLoading> createState() => _SignInLoadingState();
 }
 
-class _LoadingPageState extends State<LoadingPage> {
-  @override
-
+class _SignInLoadingState extends State<SignInLoading> {
   void initState() {
     super.initState();
 
-    Timer(const Duration(seconds: 3), () {
+    Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const SignInPage(),
+            builder: (context) => MainPage(),
           ));
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFEFEFE),
+      backgroundColor: Color(0xffFEFEFE),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -37,11 +36,10 @@ class _LoadingPageState extends State<LoadingPage> {
             height: double.infinity,
             alignment: Alignment.center,
             child: Center(
-              child: Image.asset(
-                'assets/images/onboarding_img/Mini_Robo_Background_Ornament_5.png', // Path to your center image asset
-                width: 440,
-                height: 472,
-              ),
+              child: CircularProgressIndicator(
+                color: Colors.blue,
+                backgroundColor: Colors.blueGrey,
+              )
             ),
           ),
           // Image at the bottom
@@ -53,6 +51,16 @@ class _LoadingPageState extends State<LoadingPage> {
                   'assets/images/Brainwave.png', // Path to your bottom image asset
                   width: 146,
                   height: 24,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'version 1.1.0', // Add your text here
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Sora',
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black
+                  ),
                 ),
               ],
             ),

@@ -32,7 +32,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                      padding: const EdgeInsets.only(left: 10, top: 50),
                      child: RoundedButton(
                        btnName: 'skip',
-                       bgColor: Color(0xffF3F5F7),
+                       bgColor: const Color(0xffF3F5F7),
                        callback: () => pageController.jumpToPage(controller.items.length-1),
                      ),
                    ),
@@ -77,7 +77,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       width: 311,
                       child: RoundedButton(
                         btnName: 'Get Started',
-                        bgColor: Color(0xff141718),
+                        bgColor: const Color(0xff141718),
                         textColor: Colors.white,
                         callback: (){
                           Navigator.push(

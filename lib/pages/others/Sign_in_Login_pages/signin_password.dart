@@ -1,16 +1,17 @@
-import 'package:astrogpt/pages/others/Sign_in_Login_pages/signin_password.dart';
-import 'package:astrogpt/widgets/global/largeText.dart';
+import 'package:astrogpt/pages/others/Sign_in_Login_pages/signin_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class EmailSignIn extends StatefulWidget {
-  const EmailSignIn({super.key});
+import '../../../widgets/global/largeText.dart';
+
+class PasswordSignIn extends StatefulWidget {
+  const PasswordSignIn({super.key});
 
   @override
-  State<EmailSignIn> createState() => _EmailSignInState();
+  State<PasswordSignIn> createState() => _PasswordSignInState();
 }
 
-class _EmailSignInState extends State<EmailSignIn> {
+class _PasswordSignInState extends State<PasswordSignIn> {
 
   bool isButtonActive = true;
   late TextEditingController controller;
@@ -31,6 +32,7 @@ class _EmailSignInState extends State<EmailSignIn> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -44,7 +46,7 @@ class _EmailSignInState extends State<EmailSignIn> {
               height: 100,
               // width: 311,
               child: LargeText(
-                  text: 'Your business email address',
+                text: 'Enter your password',
               ),
             ),
             const SizedBox(height: 32,),
@@ -71,7 +73,7 @@ class _EmailSignInState extends State<EmailSignIn> {
                   ),
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
-                    child: SvgPicture.asset('assets/icons/mail.svg'),
+                    child: SvgPicture.asset('assets/icons/lock.svg'),
                   ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -93,7 +95,7 @@ class _EmailSignInState extends State<EmailSignIn> {
               // ),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  disabledBackgroundColor: const Color(0xffEC8B33).withOpacity(0.3),
+                    disabledBackgroundColor: const Color(0xffEC8B33).withOpacity(0.3),
                     backgroundColor: const Color(0xffEC8B33),
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -114,7 +116,7 @@ class _EmailSignInState extends State<EmailSignIn> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const PasswordSignIn(),
+                        builder: (context) => const SignInLoading(),
                       ));
                 }
                 : null,
@@ -124,10 +126,10 @@ class _EmailSignInState extends State<EmailSignIn> {
             const Text(
               'New user? Create an account',
               style: TextStyle(
-                fontFamily: 'Sora',
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141718)
+                  fontFamily: 'Sora',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff141718)
               ),
             ),
           ],

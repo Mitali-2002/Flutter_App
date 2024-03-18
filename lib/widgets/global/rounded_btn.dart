@@ -49,7 +49,7 @@ class RoundedButton extends StatelessWidget {
         ),
       ),
       style: ElevatedButton.styleFrom(
-          primary: bgColor,
+          backgroundColor: bgColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)),
           )

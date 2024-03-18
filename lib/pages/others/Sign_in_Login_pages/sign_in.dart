@@ -1,3 +1,4 @@
+import 'package:astrogpt/pages/others/Sign_in_Login_pages/signIn_email.dart';
 import 'package:astrogpt/widgets/global/rounded_btn.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffDAE6F0),
+      backgroundColor: const Color(0xffDAE6F0),
       body: Column(
         children: [
           Center(
@@ -19,19 +20,19 @@ class SignInPage extends StatelessWidget {
           ),
           Expanded(
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(32), topRight: Radius.circular(32)),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     children: <Widget>[
                       Container(
                         width: double.infinity,
                         child: Column(
                           children: [
-                            Text(
+                            const Text(
                               'Chat with the smartest AI',
                               style: TextStyle(
                                 fontFamily: 'Sora',
@@ -39,8 +40,8 @@ class SignInPage extends StatelessWidget {
                                 fontSize: 24,
                               ),
                             ),
-                            SizedBox(height: 8,),
-                            Text(
+                            const SizedBox(height: 8,),
+                            const Text(
                               'Experience the power of AI with us',
                               style: TextStyle(
                                   fontFamily: 'Sora',
@@ -52,13 +53,13 @@ class SignInPage extends StatelessWidget {
 
                             // First Button
 
-                            SizedBox(height: 32,),
+                            const SizedBox(height: 32,),
                             Container(
                               height: 56,
                               width: 311,
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      color: Color(0xffE8ECEF),
+                                      color: const Color(0xffE8ECEF),
                                       width: 2.0
                                   ),
                                   borderRadius: BorderRadius.circular(12)
@@ -76,13 +77,13 @@ class SignInPage extends StatelessWidget {
 
                             // Second Button
 
-                            SizedBox(height: 16,),
+                            const SizedBox(height: 16,),
                             Container(
                               height: 56,
                               width: 311,
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      color: Color(0xffE8ECEF),
+                                      color: const Color(0xffE8ECEF),
                                       width: 2.0
                                   ),
                                   borderRadius: BorderRadius.circular(12)
@@ -100,14 +101,21 @@ class SignInPage extends StatelessWidget {
 
                             // Third Button
 
-                            SizedBox(height: 16,),
+                            const SizedBox(height: 16,),
                             Container(
                               height: 56,
                               width: 311,
                               child: RoundedButton(
                                 btnName:  'Continue with Email',
-                                bgColor: Color(0xffEC8B33),
+                                bgColor: const Color(0xffEC8B33),
                                 textColor: Colors.white,
+                                callback: (){
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const EmailSignIn(),
+                                      ));
+                                },
                               ),
                             ),
                           ],

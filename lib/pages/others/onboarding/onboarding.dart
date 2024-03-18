@@ -1,6 +1,9 @@
+import 'package:astrogpt/pages/others/onboarding/loading.dart';
 import 'package:astrogpt/pages/others/onboarding/onboardingitems.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../../widgets/global/rounded_btn.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -27,22 +30,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                    Container(
                      alignment: Alignment.topLeft,
                      padding: const EdgeInsets.only(left: 10, top: 50),
-                     child: ElevatedButton(
-                      onPressed: () => pageController.jumpToPage(controller.items.length-1),
-                       style: ElevatedButton.styleFrom(
-                         backgroundColor: const Color(0xffF3F5F7),
-                         shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(12),
-                         ),
-                       ),
-                      child: const Text("skip",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Sora',
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff141718)
-                        ),
-                      ),
+                     child: RoundedButton(
+                       btnName: 'skip',
+                       bgColor: Color(0xffF3F5F7),
+                       callback: () => pageController.jumpToPage(controller.items.length-1),
                      ),
                    ),
                   Image.asset(
@@ -84,24 +75,17 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     child: SizedBox(
                       height: 52,
                       width: 311,
-                      child: ElevatedButton(
-                          onPressed: (){},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff141718),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          child: const Text(
-                            'Get Started',
-                            style: TextStyle(
-                              fontFamily: 'Sora',
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              color: Colors.white
-                            ),
-
-                          )
+                      child: RoundedButton(
+                        btnName: 'Get Started',
+                        bgColor: Color(0xff141718),
+                        textColor: Colors.white,
+                        callback: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoadingPage(),
+                              ));
+                        },
                       ),
                     ),
                   ),

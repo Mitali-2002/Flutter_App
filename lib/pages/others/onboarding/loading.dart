@@ -1,9 +1,30 @@
+import 'dart:async';
+import '../Sign_in_Login_pages/sign_in.dart';
+
 import 'package:flutter/material.dart';
 
-class LoadingPage extends StatelessWidget {
+class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
 
   @override
+  State<LoadingPage> createState() => _LoadingPageState();
+}
+
+class _LoadingPageState extends State<LoadingPage> {
+  @override
+
+  void initState() {
+    super.initState();
+
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SignInPage(),
+          ));
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffFEFEFE),

@@ -1,3 +1,4 @@
+import 'package:astrogpt/pages/others/Sign_in_Login_pages/signIn_email.dart';
 import 'package:astrogpt/pages/others/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: SplashScreen(),
+      home: EmailSignIn(),
     );
   }
 }
